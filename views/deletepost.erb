@@ -1,0 +1,18 @@
+
+<h1>Delete post?</h1>
+<p><%= @user.id %></p>
+<div>
+
+<% @posts.each do |post| %>
+	<%= post.body %>
+<form method ="POST" action="/deletepost/<%= post.id %>">
+	<input type ="submit" value= "Delete Post">
+</form>
+<% end %>
+<!-- <form method ="POST" action="/deletepost/">
+	<input type ="submit" value= "Delete"> 
+</form> -->
+
+
+</div>
+

@@ -1,0 +1,32 @@
+<% if flash[:notice] %>
+    <div class="flash-notice">
+      	<%=flash[:notice] %>
+    </div>
+<% end %>
+<h1>Welcome to FakeTwitter, <%= @user.username %>!</h1>
+
+<h1>Users</h1>
+<% @activeusers.each do |user| %>
+<a href="/profile/<%= @user.id %>"><%= user = user.username %></a>
+<% end %>
+<a href='/deletepost'>Delete your posts</a>
+
+<a href="/newpost"><h2>Make a new post!</h2></a>
+	
+
+<ul>
+	<li>
+		<p><%= @user.fname %><%@user.lname%></p>
+		<p><%= @user.email%></p>
+		<p><%= @user.username%></p>
+	</li>
+</ul>
+<ul>
+	<% @posts.each do |post| %>
+	<li>
+		<p><%= post.body %></p>
+		<p><%= post.created_at %></p>
+	</li>
+	
+	<% end %>
+</ul>
